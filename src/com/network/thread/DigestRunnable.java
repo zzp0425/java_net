@@ -2,7 +2,6 @@ package com.network.thread;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
@@ -11,10 +10,10 @@ import java.security.NoSuchAlgorithmException;
 /**
  * Created by zzp on 2016/3/21.
  */
-public class DigestThread extends Thread {
+public class DigestRunnable implements Runnable {
     private String fileName;
 
-    public DigestThread(String fileName) {
+    public DigestRunnable(String fileName) {
         this.fileName = fileName;
     }
 
@@ -43,7 +42,7 @@ public class DigestThread extends Thread {
     public static void main(String[] args) {
         String[] files = new String[]{"D:\\trans\\data_9.txt", "D:\\trans\\data_err.txt", "D:\\trans\\data_err_9.txt", "D:\\trans\\list.txt"};
         for (String fileName : files) {
-            Thread t = new DigestThread(fileName);
+            Thread t = new Thread(new DigestRunnable(fileName));
             t.start();
         }
     }
