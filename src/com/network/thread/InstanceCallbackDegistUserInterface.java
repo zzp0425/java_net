@@ -18,7 +18,9 @@ public class InstanceCallbackDegistUserInterface {
 
     public void calculateDigset(){
         InstanceCallbackDegist instanceCallbackDegist = new InstanceCallbackDegist(this, fileName);
-        new Thread(instanceCallbackDegist).start();
+        Thread t = new Thread(instanceCallbackDegist);
+        t.setPriority(8);
+        t.start();
     }
 
     public void receivedDigest(byte[] digest) {

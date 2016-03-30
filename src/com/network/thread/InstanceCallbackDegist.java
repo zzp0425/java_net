@@ -21,7 +21,6 @@ public class InstanceCallbackDegist implements Runnable{
         this.callback = callback;
         this.fileName = fileName;
     }
-
     @Override
     public void run() {
         try {
