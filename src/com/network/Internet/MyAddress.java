@@ -8,7 +8,7 @@ import java.net.UnknownHostException;
  * on 2016/3/31.
  * 查找本地机器的地址
  */
-public class MyAdrdess {
+public class MyAddress {
     public static void main(String[] args) {
         try {
             InetAddress address = InetAddress.getLocalHost();
