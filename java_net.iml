@@ -8,5 +8,6 @@
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="jdk" jdkName="1.6_x86" jdkType="JavaSDK" />
+    <orderEntry type="library" name="log4j-1.2.15 (2)" level="project" />
   </component>
 </module>
