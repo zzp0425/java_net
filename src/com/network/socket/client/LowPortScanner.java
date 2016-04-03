@@ -11,7 +11,7 @@ import java.net.UnknownHostException;
  */
 public class LowPortScanner {
     public static void main(String[] args) {
-        String host = args.length > 0 ? args[0] : "localhost";
+        String host = args.length > 0 ? args[0] : "127.0.0.1";
         try {
             System.out.println(host);
             for (int i = 1; i < 1024; i++) {
