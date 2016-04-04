@@ -209,7 +209,7 @@ public class WhoisGUI extends JFrame {
         @Override
         protected void done() {
             try {
-                names.setText(get());
+                names.setText(get());//调用doInBackground返回的string
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(WhoisGUI.this, e.getMessage(), "Lookup Failed", JOptionPane.ERROR_MESSAGE);
             }
