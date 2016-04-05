@@ -11,6 +11,7 @@ import java.nio.channels.WritableByteChannel;
 /**
  * Created by 周振平
  * on 2016/4/5.
+ * 字符生成器客户端
  */
 public class ChargenClient {
     public static void main(String[] args) {
