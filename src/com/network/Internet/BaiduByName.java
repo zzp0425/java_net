@@ -11,7 +11,7 @@ public class BaiduByName {
     public static void main(String[] args) {
         try {
             //根据主机名返回主机IP
-            InetAddress address = InetAddress.getByName("www.baidu.com");
+            InetAddress address = InetAddress.getByName("https://assets-cdn.github.com");
             System.out.println(address);
 
             //根据主机IP返回主机名
@@ -19,13 +19,14 @@ public class BaiduByName {
             System.out.println(address.getHostName());
 
             //获取所有主机IP
-            InetAddress[] inetAddress = InetAddress.getAllByName("www.baidu.com");
+            InetAddress[] inetAddress = InetAddress.getAllByName("http://www.baidu.com");
             for (InetAddress netAddress : inetAddress) {
                 System.out.println(netAddress);
             }
 
         } catch (UnknownHostException e) {
-            System.out.println("could not find www.baidu.com");
+            e.printStackTrace();
+            System.out.println("could not find host");
         }
     }
 }
