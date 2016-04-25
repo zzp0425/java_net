@@ -110,27 +110,34 @@ public class BitMapiso {
     @SuppressWarnings("unchecked")
     public static byte[] PackResponse(List list) {
         int len = 16;
+        /**
+         * 存放所有接口的配置信息
+         * [][0]bit 位：在Map中的位
+         * [][1]type 类型：1-ascii 2-binary
+         * [][2]len 长度：(对定长有效)
+         * [][3]varLean 变长：0-非变长，2位变长，3位变长
+         */
         for (int i = 0; i < list.size(); i++) {
             BitMap bitMap = (BitMap) list.get(i);
             // 计算请求包总长度
-            if (bitMap.getBitType() == 2) {
-                if (bitMap.getVariable() > 0) {
+            if (bitMap.getBitType() == 2) {//二进制
+                if (bitMap.getVariable() > 0) {//变长
                     len += bitMap.getVariable() - 1 + bitMap.getData().length;
                 } else {
                     len += bitMap.getVariable() + bitMap.getData().length;
                 }
-            } else {
+            } else {//ascii码
                 len += bitMap.getVariable() + bitMap.getData().length;
             }
         }
         byte[] body = new byte[len];
         // 位图
         boolean[] bbitMap = new boolean[129];
-        bbitMap[1] = true;
+        bbitMap[1] = true;//128域
         int temp = (bbitMap.length - 1) / 8;
         for (int j = 0; j < list.size(); j++) {
             BitMap bitMap = (BitMap) list.get(j);
-            bbitMap[bitMap.getBit()] = true;
+            bbitMap[bitMap.getBit()] = true;//有值的位置置为true
             byte[] bitmap = LoUtils.getByteFromBinary(bbitMap);
             System.arraycopy(bitmap, 0, body, 0, bitmap.length);
             // 数据
