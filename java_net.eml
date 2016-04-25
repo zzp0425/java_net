@@ -4,5 +4,6 @@
 	<contentEntry url="file://$MODULE_DIR$"/>
 	<levels>
 		<level name="log4j-1.2.15 (2)" value="project"/>
+		<level name="servlet-api" value="project"/>
 	</levels>
 </component>

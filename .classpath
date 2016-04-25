@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.6.0_39"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/log4j-1.2.15 (2)"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/servlet-api"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
