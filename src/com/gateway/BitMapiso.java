@@ -174,4 +174,5 @@ public class BitMapiso {
                 | ((res[2] << 24) >>> 8) | (res[3] << 24);
         return targets;
     }
+
 }

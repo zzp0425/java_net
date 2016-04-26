@@ -1,5 +1,7 @@
 package com.gateway;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * Created by 周振平
  * on 2016/4/25.
@@ -25,4 +27,11 @@ public class PortConfig {
             {48,1,52,3},
             {120,2,128,3}
     };
+
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        String str = "四川省南充市吉���街90号6单元6楼2号";
+        byte[] bytes = str.getBytes("utf8");
+        System.out.println(new String(bytes));
+        System.out.println(str);
+    }
 }
